@@ -1,0 +1,15 @@
+{%extends 'base.html'%}
+{{super()}}
+{%block content%}
+<div class="reg_form-wrapper">
+    <form method="POST">
+        {{form.name(class="form-control",placeholder="Full Name")}}
+        {{form.reg_no(class="form-control",placeholder="Registration No")}}
+        {{form.email(class="form-control",placeholder="Email",type="email")}}
+        {{form.phone_number(class="form-control",placeholder="Contact")}}
+        {{form.password(class="form-control",placeholder="Password")}}
+        <p class="row mt-3">Already a user ? <a href="{{url_for('login')}}">Login</a></p>
+        {{form.Register(class="btn btn-secondary mt-3")}}
+    </form>
+</div>
+{%endblock%}

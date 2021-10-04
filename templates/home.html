@@ -1,0 +1,23 @@
+{% extends 'base.html'%}
+{%block content%}
+<div class="content-wrapper">
+    <div class="container pointer-wrapper">
+        <h5 class="row">POINTERS</h5>
+        <div class="row mt-2 ">Current location</div>
+        <div class="row mt-2 ">Custom pointer</div>
+
+    </div>
+    <div class="map-wrapper">
+        <!--<h2>Template function centered, no marker</h2>
+        {{googlemap("simple-map", 37.4419, -122.1419)}}
+
+        <h2>Template filter decoupled with single marker</h2>
+        {{"decoupled-map"|googlemap_html(37.4419, -122.1419)}}-->
+
+        <h2>UNIVERSITY MAP</h2>
+        <div class="map">
+            {{mymap.html}}
+        </div>
+    </div>
+</div>
+{%endblock%}

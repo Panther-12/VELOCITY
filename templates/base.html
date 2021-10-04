@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/index.css')}}">
+    {{"decoupled-map"|googlemap_js(37.4419, -122.1419, markers=[(37.4419,
+    -122.1419)])}} {{mymap.js}} 
+    <title>velocity</title>
+</head>
+<body>
+    <div class="top-nav">
+        <a href="{{url_for('home')}}">HOME</a>
+        <a href="#home">STATS</a>
+    </div>
+    {%for message in get_flashed_messages()%}
+        <div class="alert alert-warning">
+            <button type="button" class="close" onclick="">&times;</button>
+            {{message}}
+        </div>
+    {%endfor%}
+    {% block content%} {%endblock%}
+</body>
+<script src="{{url_for('static',filename='scripts/bootstrap.min.js')}}"></script>
+</html>
